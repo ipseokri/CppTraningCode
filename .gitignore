@@ -1,6 +1,6 @@
 # : comments
 
-# no .a files
+# no .out files
 *.out
 
 # but do track lib.a, even though you're ignoring .a files above
