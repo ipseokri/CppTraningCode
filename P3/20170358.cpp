@@ -164,7 +164,7 @@ int main(void)
     int pet_num = 0;
     int owner_num = 0;
 
-    readFile.open("input.txt");    //파일 열기
+    readFile.open("input.txt");  
  
     if (readFile.is_open())
     {
@@ -176,7 +176,6 @@ int main(void)
             string stringBuffer;
             vector<string> x;
             x.clear();
-            //구분자가 , 이라면 getline(ss, stringBuffer, ',')쓰면됨
   
             while (getline(ss, stringBuffer, ' ')){
                 x.push_back(stringBuffer);
@@ -213,7 +212,6 @@ int main(void)
                 for(int i = 0; i < pet_num; i++){
                     if(hotelPetList[i].getCheckIn()){
                         hotelPetList[i].dayLeft(stoi(x[1]));
-                        // cout << "pet : " << hotelPetList[i].getName() << endl;
                         if(hotelPetList[i].getNights() <= 0){
                             for(int j = 0; j < owner_num; j++){
                                 if(hotelPetList[i].getOwner() == hotelPetOwnerList[j].getName()){
@@ -222,7 +220,6 @@ int main(void)
                                         balance += hotelPetList[i].getFee();
                                         hotelPetOwnerList[j].subPetNum(1);
                                         hotelPetList[i].setCheckout();
-                                        // cout << hotelPetList[i].getName() << "was checked out" << endl;
                                     }
                                 }
                             }
@@ -236,7 +233,7 @@ int main(void)
                 cout << "Working Days: " << WorkDays << ", Balance: " << balance << endl;
             }
         }
-        readFile.close();    //파일 닫아줍니다.
+        readFile.close();   
     }
     return 0;
 }
