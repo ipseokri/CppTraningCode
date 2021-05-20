@@ -21,8 +21,8 @@
   
 		  //추가
 		  //2. file input
-		  "<",
-		  "${fileDirname}/input.txt",
+		//   "<",
+		//   "${fileDirname}/input.txt",
   
 		  //추가
 		  //3. file output
