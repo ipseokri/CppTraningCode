@@ -42,6 +42,7 @@ public:
 
     Circle(): p1c(Point(0,0)), rad(0) {};
     Circle(Point& p1, int NewRad):p1c(p1), rad(NewRad) {};
+    ~Circle() {};
     void draw();
     
 };
@@ -71,7 +72,6 @@ int main ()
 {
     string mode;
     vector<Figure*> container;
-    uint mem;
 
     while(1){
         cout << "Enter figure type or draw: ";
@@ -102,7 +102,7 @@ int main ()
                 (*(*iter)).draw();
                 delete *iter;
             }
-            container.clear(); // 메모리 누수 발생  그렇다면 해제를 먼저 해주어야함.
+            container.clear(); 
         }
         else if(mode == "exit"){
             break;
