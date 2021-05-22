@@ -44,6 +44,7 @@ public:
     Circle(Point& p1, int NewRad):p1c(p1), rad(NewRad) {};
     ~Circle() {};
     void draw();
+
     
 };
 
@@ -100,11 +101,14 @@ int main ()
             vector<Figure*>::iterator iter;
             for(iter = container.begin(); iter != container.end(); iter++){
                 (*(*iter)).draw();
+            }
+        }
+        else if(mode == "exit"){
+            vector<Figure*>::iterator iter;
+            for(iter = container.begin(); iter != container.end(); iter++){
                 delete *iter;
             }
             container.clear(); 
-        }
-        else if(mode == "exit"){
             break;
         }
         else{
